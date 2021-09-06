@@ -1,15 +1,15 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:smalltest/components/round_create.dart';
 
-import 'package:smalltest/Screens/login/login_screen.dart';
-import 'package:smalltest/components/Alreadyhaveacc.dart';
-import 'package:smalltest/components/rounded_input_field.dart';
-import 'package:smalltest/components/rounded_list.dart';
+// import 'package:smalltest/Screens/login/login_screen.dart';
+// import 'package:smalltest/components/Alreadyhaveacc.dart';
+// import 'package:smalltest/components/round_create.dart';
+// import 'package:smalltest/components/rounded_input_field.dart';
+// import 'package:smalltest/components/rounded_list.dart';
 // import 'package:smalltest/components/rounded_signup_field.dart';
 import 'package:smalltest/constants.dart';
-
-import '../../../welcome_screen.dart';
 
 class Body extends StatelessWidget {
   @override
@@ -17,6 +17,7 @@ class Body extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
     return SafeArea(
       child: SizedBox(
+        width: double.infinity,
         child: Column(
           children: [
             Expanded(
@@ -47,6 +48,7 @@ class Body extends StatelessWidget {
                         height: size.height * 0.003,
                       ),
                       Container(
+                        width: double.infinity,
                         // height: size.height * 0.04,
                         padding: EdgeInsets.only(left: 20, right: 20),
                         child: CupertinoSearchTextField(
@@ -65,6 +67,7 @@ class Body extends StatelessWidget {
                   child: Column(
                     children: [
                       Container(
+                        width: double.infinity,
                         padding: EdgeInsets.only(left: 20, top: 10),
                         alignment: Alignment.centerLeft,
                         child: Text(
@@ -75,89 +78,152 @@ class Body extends StatelessWidget {
                           textAlign: TextAlign.start,
                         ),
                       ),
-
-                      // Positioned(
-                      //   // bottom: 10,
-                      //   // left: 40,
-                      //   child: RoundList(
-                      //     text: 'Create Card',
-                      //     textColor: Colors.black,
-                      //     color: PinkColor,
-                      //     press: () => () {
-                      //       Navigator.of(context).push(MaterialPageRoute(
-                      //           builder: (context) => WelcomeScreen()));
-                      //     },
-                      //   ),
-                      // ),
-                      // scrollDirection: Axis.vertical,
-
-                      Padding(
-                        padding: const EdgeInsets.all(16),
-                        child: Container(
-                          child: FittedBox(
-                            child: Material(
-                              color: Color(0xFFededed),
-                              borderRadius: BorderRadius.circular(24.0),
-                              shadowColor: Color(0x802196F3),
-                              child: Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: <Widget>[
-                                    Container(
-                                      width: 250,
-                                      height: 200,
-                                      child: ClipRRect(
-                                        child: Image(
-                                          image: NetworkImage(
-                                              "https://blackcatcard.com/images/card-main.png"),
-                                          fit: BoxFit.contain,
-                                          alignment: Alignment.topLeft,
-                                        ),
-                                      ),
-                                    ),
-                                    Container(
-                                      padding: EdgeInsets.all(10.0),
-                                      child: Column(
-                                        children: [
-                                          Text(
-                                            "Shop",
-                                            style: TextStyle(
-                                                fontWeight: FontWeight.bold,
-                                                fontSize: size.width * 0.05),
-                                          ),
-                                          Text(
-                                              "we are glad to serve you warm meal")
-                                        ],
-                                      ),
-                                    )
-                                  ]),
-                            ),
-                          ),
-                        ),
+                      ListCategory(
+                        text: 'Engineer',
+                        input: 'Create your card',
+                        press: () {},
+                        img: 'assets/images/Engineer.png',
                       ),
-
-                      SizedBox(
-                        height: size.height * 0.02,
+                      ListCategory(
+                        text: 'Programmer',
+                        input: 'Create your card',
+                        press: () {},
+                        img: 'assets/images/developers.png',
                       ),
-                      AlreadyHaveAnAccountCheck(
-                        login: false,
-                        press: () => () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) {
-                                return LoginScreen(); // return SignUpScreen();
-                              },
-                            ),
-                          );
-                        },
+                      ListCategory(
+                        text: 'Lawyer',
+                        input: 'Create your card',
+                        press: () {},
+                        img: 'assets/images/lawyer.png',
                       ),
-                      SizedBox(
-                        height: size.height * 0.05,
+                      ListCategory(
+                        text: 'Business',
+                        input: 'Create your card',
+                        press: () {},
+                        img: 'assets/images/person.png',
                       ),
                     ],
                   ),
                 ),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class ListCategory extends StatelessWidget {
+  final String text;
+  final String input;
+  final Function press;
+  final String img;
+  const ListCategory({
+    Key? key,
+    required this.text,
+    required this.input,
+    required this.press,
+    // required this.color,
+    // required this.textColor,
+    required this.img,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
+    return Card(
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(20),
+      ),
+      color: Color(0xFFededed),
+      margin: EdgeInsets.only(top: 18, bottom: 0),
+      child: Container(
+        // padding: EdgeInsets.all(5.0),
+        width: 380,
+        height: 145,
+        // margin: EdgeInsets.only(top: 10, bottom: 10),
+        child: Stack(
+          children: [
+            Positioned(
+              top: 10,
+              left: 15,
+              child: Row(
+                children: [
+                  Container(
+                    height: 90,
+                    width: 120,
+                    child: Image.asset(
+                      img,
+                      height: size.height * 0.2,
+                      width: size.width * 0.2,
+                    ),
+                  ),
+                  // SizedBox(
+                  //   width: size.width * 0.1,
+                  // ),
+
+                  Container(
+                    height: 110,
+                    width: 190,
+                    padding: EdgeInsets.only(left: 20, top: 10),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Align(
+                          alignment: Alignment.topLeft,
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: <Widget>[
+                              Text(
+                                text,
+                                style: TextStyle(
+                                  fontSize: 14,
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                              SizedBox(
+                                height: size.height * 0.01,
+                              ),
+                              // Divider(color: Colors.black),
+                              Text(
+                                'we are glad to serve you warm meal.',
+                                style: TextStyle(
+                                  fontSize: 11,
+                                  color: Colors.black,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        Positioned(
+                          top: 10,
+                          left: 40,
+                          child: Container(
+                            width: 240,
+                            height: 40,
+                            // borderRadius: BorderRadius.circular(10),
+                            child: OutlinedButton(
+                              onPressed: press(),
+                              child: Text(
+                                input,
+                                style: TextStyle(color: Colors.black),
+                              ),
+                              style: OutlinedButton.styleFrom(
+                                side: BorderSide(color: PinkColor, width: 2),
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(29),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
               ),
             ),
           ],

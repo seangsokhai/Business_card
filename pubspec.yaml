@@ -62,6 +62,12 @@ flutter:
     - assets/images/card.png
     - assets/images/QR.png
     - assets/images/search.png
+    - assets/images/person.png
+    - assets/images/developers.png
+    - assets/images/Engineer.png
+    - assets/images/lawyer.png
+
+
 
     - assets/icons/chat.svg
     - assets/icons/facebook.svg

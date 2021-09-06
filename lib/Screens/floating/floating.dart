@@ -3,7 +3,7 @@ import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:smalltest/Screens/floating/category/category.dart';
 import 'package:smalltest/Screens/floating/createcard/create_card.dart';
 import 'package:smalltest/Screens/floating/profile/profile.dart';
-import 'package:smalltest/Screens/login/login_screen.dart';
+import 'package:smalltest/Screens/floating/team/team.dart';
 // import 'package:smalltest/Screens/welcome_screen.dart';
 
 import '../../constants.dart';
@@ -18,18 +18,19 @@ class _ExampleState extends State<Floating> {
   final List<Widget> _children = [
     CreateCard(),
     CateGory(),
-    LoginScreen(),
+    TeamScreen(),
     Profile(),
   ];
-  
+
   void onTappBar(int index) {
     setState(() {
       _selectedIndex = index;
     });
   }
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(      
+    return Scaffold(
       backgroundColor: Colors.white,
       body: _children[_selectedIndex],
       bottomNavigationBar: Container(
@@ -44,9 +45,7 @@ class _ExampleState extends State<Floating> {
           ],
         ),
         child: SafeArea(
-          
           child: Padding(
-            
             padding: const EdgeInsets.symmetric(horizontal: 15.0, vertical: 8),
             child: GNav(
               rippleColor: Colors.grey[300]!,
