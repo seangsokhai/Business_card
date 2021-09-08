@@ -1,18 +1,38 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:smalltest/Screens/floating/category/category2.dart';
-// import 'package:smalltest/components/round_create.dart';
-
-// import 'package:smalltest/Screens/login/login_screen.dart';
-// import 'package:smalltest/components/Alreadyhaveacc.dart';
-// import 'package:smalltest/components/round_create.dart';
-// import 'package:smalltest/components/rounded_input_field.dart';
-// import 'package:smalltest/components/rounded_list.dart';
-// import 'package:smalltest/components/rounded_signup_field.dart';
 import 'package:smalltest/constants.dart';
 
+// import 'package:smalltest/constants.dart';
+
+class CateGoryTwo extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: PinkColor,
+        title:
+            Center(child: new Text("Categories", textAlign: TextAlign.center)),
+      ),
+      body: Body(),
+    );
+  }
+}
+
 class Body extends StatelessWidget {
+  final categories = [
+    'Shop',
+    'Engineer',
+    'Lawyer',
+    'Engineer',
+    'Lawyer',
+    'Lawyer',
+    'Lawyer',
+    'Lawyer',
+    'Lawyer',
+    'Lawyer',
+    'Lawyer'
+  ];
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -32,16 +52,10 @@ class Body extends StatelessWidget {
                       SizedBox(
                         height: size.height * 0.006,
                       ),
-                      Image.asset('assets/images/logo.png',
-                          height: size.height * 0.1),
-
-                      SizedBox(
-                        height: size.height * 0.003,
-                      ),
                       Container(
                         width: double.infinity,
                         // height: size.height * 0.04,
-                        padding: EdgeInsets.only(left: 20, right: 20),
+                        padding: EdgeInsets.only(left: 20, right: 20, top: 10),
                         child: CupertinoSearchTextField(
                           backgroundColor: Colors.grey.shade50,
                         ),
@@ -51,8 +65,42 @@ class Body extends StatelessWidget {
                 ),
               ),
             ),
+            Container(
+              height: 60,
+              color: Colors.white10,
+              child: ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  shrinkWrap: true,
+                  physics: ScrollPhysics(),
+                  itemCount: categories.length,
+                  itemBuilder: (BuildContext context, int index) {
+                    return Container(
+                      margin: EdgeInsets.only(
+                          left: 10, right: 10, top: 15, bottom: 15),
+                      padding: EdgeInsets.only(
+                        left: 10,
+                        top: 5,
+                        right: 10,
+                        bottom: 5,
+                      ),
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(20),
+                          color: Color(0xFF166432)),
+                      child: Padding(
+                        padding: EdgeInsets.only(
+                          left: 5,
+                          right: 5,
+                        ),
+                        child: Text(
+                          categories[index],
+                          style: TextStyle(color: Colors.white, fontSize: 15),
+                        ),
+                      ),
+                    );
+                  }),
+            ),
             Expanded(
-              flex: 4,
+              flex: 7,
               child: SingleChildScrollView(
                 child: Container(
                   child: Column(
@@ -72,10 +120,7 @@ class Body extends StatelessWidget {
                       ListCategory(
                         text: 'Engineer',
                         input: 'Create your card',
-                        press: () => () {
-                          Navigator.of(context).push(MaterialPageRoute(
-                              builder: (context) => CateGoryTwo()));
-                        },
+                        press: () {},
                         img: 'assets/images/Engineer.png',
                       ),
                       ListCategory(

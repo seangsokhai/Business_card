@@ -5,6 +5,8 @@ import 'package:smalltest/components/round_create.dart';
 
 import 'package:smalltest/constants.dart';
 
+import '../create_OR.dart';
+
 class Body extends StatelessWidget {
   const Body({Key? key}) : super(key: key);
 
@@ -221,7 +223,7 @@ class Body extends StatelessWidget {
                               color: PinkColor,
                               press: () => () {
                                 Navigator.of(context).push(MaterialPageRoute(
-                                    builder: (context) => WelcomeScreen()));
+                                    builder: (context) => CreateQR()));
                               },
                             ),
                           ),
