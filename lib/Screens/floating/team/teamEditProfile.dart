@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:smalltest/Screens/floating/team/team.dart';
-import 'package:smalltest/Screens/floating/team/teamProfile.dart';
+// import 'package:smalltest/Screens/floating/team/teamProfile.dart';
 
 import '../../../constants.dart';
 
@@ -124,24 +124,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                               ),
                             ),
                           ),
-                          // Container(
-                          //   height: 30,
-                          //   width: 80,
-                          //   child: IconButton(
-                          //     onPressed: () {
-                          //       Navigator.push(
-                          //           context,
-                          //           MaterialPageRoute(
-                          //               builder: (BuildContext context) =>
-                          //                   TeamProfile()));
-                          //     },
-                          //     icon: Icon(
-                          //       Icons.visibility,
-                          //       color: Colors.black,
-                          //       size: 20,
-                          //     ),
-                          //   ),
-                          // ),
+                          
                         ],
                       ),
                       Form(

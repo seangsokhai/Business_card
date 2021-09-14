@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:smalltest/Screens/welcome_screen.dart';
+import 'package:smalltest/Screens/QRsuccess.dart';
+
 import 'package:smalltest/components/rounded_bottom.dart';
 import 'package:smalltest/components/rounded_input_field.dart';
 import 'package:smalltest/components/rounded_signup_field.dart';
 import 'package:smalltest/constants.dart';
 
 class CreateQR extends StatelessWidget {
-  const CreateQR ({Key? key}) : super(key: key);
+  const CreateQR({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -15,9 +16,9 @@ class CreateQR extends StatelessWidget {
       backgroundColor: PinkColor,
       appBar: AppBar(
         elevation: 0,
-        automaticallyImplyLeading: false, // Used for removing back buttoon.
+        // automaticallyImplyLeading: false, // Used for removing back buttoon.
         title: new Center(
-          child: new Text("Team QR Code"),
+          child: new Text("Your QR Code"),
         ),
         backgroundColor: PinkColor,
       ),
@@ -49,7 +50,7 @@ class Body extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          "Create Team QR Code",
+                          "Create QR Code",
                           style: TextStyle(
                             color: Colors.white,
                             fontSize: size.width * 0.06,
@@ -142,28 +143,44 @@ class Body extends StatelessWidget {
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: <Widget>[
-                        ElevatedButton(
-                          style: ElevatedButton.styleFrom(
-                              minimumSize: Size(90, 80),
-                              primary: PinkLColor,
-                              onPrimary: PinkColor,
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(8),
-                              )),
-                          onPressed: () {},
-                          child: Text('Upload Your Pic'),
+                        Container(
+                          width: 150,
+                          height: 100,
+                          child: ElevatedButton.icon(
+                            label: Text(''),
+                            icon: Icon(
+                              Icons.account_circle,
+                              size: 100,
+                            ),
+                            style: ElevatedButton.styleFrom(
+                                minimumSize: Size(90, 80),
+                                primary: PinkLColor,
+                                onPrimary: PinkColor,
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(8),
+                                )),
+                            onPressed: () {},
+                          ),
                         ),
                         // const SizedBox(height: 30),
-                        ElevatedButton(
-                          style: ElevatedButton.styleFrom(
-                              minimumSize: Size(90, 80),
-                              primary: PinkLColor,
-                              onPrimary: PinkColor,
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(8),
-                              )),
-                          onPressed: () {},
-                          child: Text('Upload Your Logo'),
+                        Container(
+                          width: 150,
+                          height: 100,
+                          child: ElevatedButton.icon(
+                            label: Text(''),
+                            icon: Icon(
+                              Icons.image,
+                              size: 100,
+                            ),
+                            style: ElevatedButton.styleFrom(
+                                minimumSize: Size(90, 80),
+                                primary: PinkLColor,
+                                onPrimary: PinkColor,
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(8),
+                                )),
+                            onPressed: () {},
+                          ),
                         ),
                       ],
                     ),
@@ -192,7 +209,7 @@ class Body extends StatelessWidget {
                   color: PinkLColor,
                   press: () => () {
                     Navigator.of(context).push(
-                        MaterialPageRoute(builder: (context) => WelcomeScreen()));
+                        MaterialPageRoute(builder: (context) => Orsuccess()));
                   },
                 ),
                 SizedBox(

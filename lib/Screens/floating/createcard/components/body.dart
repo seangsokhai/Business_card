@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:smalltest/Screens/welcome_screen.dart';
+import 'package:smalltest/Screens/floating/category/category.dart';
+import 'package:smalltest/Screens/floating/createcard/createOR.dart';
 import 'package:smalltest/components/round_create.dart';
-
 import 'package:smalltest/constants.dart';
-
-import '../create_OR.dart';
 
 class Body extends StatelessWidget {
   const Body({Key? key}) : super(key: key);
@@ -136,7 +134,7 @@ class Body extends StatelessWidget {
                               color: PinkColor,
                               press: () => () {
                                 Navigator.of(context).push(MaterialPageRoute(
-                                    builder: (context) => WelcomeScreen()));
+                                    builder: (context) => CateGory()));
                               },
                             ),
                           ),

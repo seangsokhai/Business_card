@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:smalltest/Screens/cardsuccess.dart';
 import 'package:smalltest/constants.dart';
 
 // import 'package:smalltest/constants.dart';
@@ -10,6 +11,7 @@ class CateGoryTwo extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        elevation: 0,
         backgroundColor: PinkColor,
         title:
             Center(child: new Text("Categories", textAlign: TextAlign.center)),
@@ -120,7 +122,13 @@ class Body extends StatelessWidget {
                       ListCategory(
                         text: 'Engineer',
                         input: 'Create your card',
-                        press: () {},
+                        press: () => () {
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (context) => Cardsuccess(),
+                            ),
+                          );
+                        },
                         img: 'assets/images/Engineer.png',
                       ),
                       ListCategory(

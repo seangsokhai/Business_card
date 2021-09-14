@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:smalltest/Screens/floating/team/team.dart';
-import 'package:smalltest/Screens/welcome_screen.dart';
+import 'package:smalltest/Screens/cardsuccess.dart';
+// import 'package:smalltest/Screens/floating/team/team.dart';
+// import 'package:smalltest/Screens/welcome_screen.dart';
 import 'package:smalltest/components/rounded_bottom.dart';
 import 'package:smalltest/components/rounded_input_field.dart';
 import 'package:smalltest/components/rounded_signup_field.dart';
@@ -188,7 +189,7 @@ class Body extends StatelessWidget {
                   color: PinkLColor,
                   press: () => () {
                     Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => TeamScreen()));
+                        builder: (context) => Cardsuccess()));
                   },
                 ),
                 SizedBox(

@@ -7,31 +7,13 @@ class Profile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: buildAppBar(context),
-      body: Body(),
-    );
-  }
-
-  AppBar buildAppBar(context) {
-    Size size = MediaQuery.of(context).size;
-    return AppBar(
-      backgroundColor: PinkColor,
-      leading: SizedBox(),
-      centerTitle: true,
-      title: Text("Profile"),
-      actions: <Widget>[
-        TextButton(
-          onPressed: () {},
-          child: Text(
-            "Edit",
-            style: TextStyle(
-              color: Colors.white,
-              fontSize: size.width * 0.05,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-        )
-      ],
+      appBar: AppBar(
+        elevation: 0,
+        backgroundColor: PinkColor,
+        automaticallyImplyLeading: false,
+        title: Center(child: new Text("Profile", textAlign: TextAlign.center)),
+      ),
+      body: ProfilePageView (),
     );
   }
 }

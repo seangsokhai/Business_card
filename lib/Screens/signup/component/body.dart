@@ -95,23 +95,18 @@ class Body extends StatelessWidget {
                   onChange: (value) {},
                 ),
                 RoundInputFeild(
+                  icon: Icons.facebook,
+                  hintText: 'Facebook',
+                  onChange: (value) {},
+                ),
+                RoundInputFeild(
+                  icon: Icons.home,
+                  hintText: 'Address',
+                  onChange: (value) {},
+                ),
+                RoundInputFeild(
                   icon: Icons.email,
                   hintText: 'Email',
-                  onChange: (value) {},
-                ),
-                RoundInputFeild(
-                  icon: Icons.password,
-                  hintText: 'Password',
-                  onChange: (value) {},
-                ),
-                RoundInputFeild(
-                  icon: Icons.password,
-                  hintText: 'Password',
-                  onChange: (value) {},
-                ),
-                RoundInputFeild(
-                  icon: Icons.password,
-                  hintText: 'Password',
                   onChange: (value) {},
                 ),
                 RoundInputFeild(
@@ -126,7 +121,7 @@ class Body extends StatelessWidget {
                   height: size.height * 0.0,
                 ),
                 RoundedButtom(
-                  text: 'Sign up >>>',
+                  text: 'Sign up',
                   textColor: Colors.black,
                   color: PinkLColor,
                   press: () => () {

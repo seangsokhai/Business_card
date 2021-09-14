@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:smalltest/Screens/floating/team/teamEditProfile.dart';
+import 'package:smalltest/Screens/floating/profile/profile.dart';
 
 import '../../../constants.dart';
 
-class TeamProfile extends StatelessWidget {
-  const TeamProfile({Key? key}) : super(key: key);
+class ProfileEdit extends StatelessWidget {
+  const ProfileEdit({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +13,7 @@ class TeamProfile extends StatelessWidget {
         elevation: 0,
         backgroundColor: PinkColor,
         title: Center(
-            child: new Text("Edit Team Profile", textAlign: TextAlign.center)),
+            child: new Text("Edit Profile", textAlign: TextAlign.center)),
       ),
       backgroundColor: Color(0xFFededed),
       body: MyStatefulWidget(),
@@ -49,11 +49,11 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
               child: Row(
                 children: [
                   Text(
-                    'Team Profile',
+                    'Update your Profile',
                     style: TextStyle(
                         fontWeight: FontWeight.bold,
                         color: Colors.white,
-                        fontSize: 26),
+                        fontSize: 22),
                   ),
                 ],
               ),
@@ -62,7 +62,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
           Positioned(
             top: 65,
             child: Container(
-              height: 500,
+              height: 550,
               width: MediaQuery.of(context).size.width - 40,
               margin: EdgeInsets.symmetric(horizontal: 20),
               decoration: BoxDecoration(
@@ -123,24 +123,24 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                               ),
                             ),
                           ),
-                          Container(
-                            height: 30,
-                            width: 80,
-                            child: IconButton(
-                              onPressed: () {
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (BuildContext context) =>
-                                            TeamEditProfile()));
-                              },
-                              icon: Icon(
-                                Icons.border_color,
-                                color: Colors.black,
-                                size: 20,
-                              ),
-                            ),
-                          ),
+                          // Container(
+                          //   height: 30,
+                          //   width: 80,
+                          //   child: IconButton(
+                          //     onPressed: () {
+                          //       Navigator.push(
+                          //           context,
+                          //           MaterialPageRoute(
+                          //               builder: (BuildContext context) =>
+                          //                   TeamProfile()));
+                          //     },
+                          //     icon: Icon(
+                          //       Icons.visibility,
+                          //       color: Colors.black,
+                          //       size: 20,
+                          //     ),
+                          //   ),
+                          // ),
                         ],
                       ),
                       Form(
@@ -155,7 +155,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                                   style: TextStyle(color: Colors.grey)),
                               TextFormField(
                                 decoration: const InputDecoration(
-                                  hintText: 'Seang Sokhai',
+                                  hintText: '',
                                 ),
                                 validator: (String? value) {
                                   if (value == null || value.isEmpty) {
@@ -173,7 +173,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                               ),
                               TextFormField(
                                 decoration: const InputDecoration(
-                                  hintText: '078300124',
+                                  hintText: '',
                                 ),
                                 validator: (String? value) {
                                   if (value == null || value.isEmpty) {
@@ -189,7 +189,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                                   style: TextStyle(color: Colors.grey)),
                               TextFormField(
                                 decoration: const InputDecoration(
-                                  hintText: 'ssokhai@prosethsolutions.com',
+                                  hintText: '',
                                 ),
                                 validator: (String? value) {
                                   if (value == null || value.isEmpty) {
@@ -205,7 +205,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                                   style: TextStyle(color: Colors.grey)),
                               TextFormField(
                                 decoration: const InputDecoration(
-                                  hintText: 'Web & App Intern',
+                                  hintText: '',
                                 ),
                                 validator: (String? value) {
                                   if (value == null || value.isEmpty) {
@@ -221,7 +221,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                                   style: TextStyle(color: Colors.grey)),
                               TextFormField(
                                 decoration: const InputDecoration(
-                                  hintText: 'street 2004',
+                                  hintText: '',
                                 ),
                                 validator: (String? value) {
                                   if (value == null || value.isEmpty) {
@@ -237,7 +237,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                                   style: TextStyle(color: Colors.grey)),
                               TextFormField(
                                 decoration: const InputDecoration(
-                                  hintText: 'WWW.saihok.com',
+                                  hintText: '',
                                 ),
                                 validator: (String? value) {
                                   if (value == null || value.isEmpty) {
@@ -245,6 +245,31 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                                   }
                                   return null;
                                 },
+                              ),
+                              Padding(
+                                padding:
+                                    const EdgeInsets.symmetric(vertical: 16.0),
+                                child: Center(
+                                  child: ElevatedButton(
+                                    style: ElevatedButton.styleFrom(
+                                      primary: Colors.green,
+                                    ),
+                                    onPressed: () {
+                                      // Validate will return true if the form is valid, or false if
+                                      // the form is invalid.
+                                      if (_formKey.currentState!.validate()) {
+                                        // Process data.
+                                        Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                                builder:
+                                                    (BuildContext context) =>
+                                                        Profile()));
+                                      }
+                                    },
+                                    child: const Text('Submit'),
+                                  ),
+                                ),
                               ),
                             ],
                           ),
