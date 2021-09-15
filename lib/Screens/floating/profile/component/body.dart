@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:smalltest/Screens/floating/profile/profiledit.dart';
+import 'package:smalltest/Screens/welcome_screen.dart';
 import 'package:smalltest/components/listyourcard.dart';
 // import 'package:smalltest/components/listyourcard.dart';
 import 'package:smalltest/constants.dart';
@@ -43,28 +44,107 @@ class _ProfilePageViewState extends State<ProfilePageView> {
                             color: Colors.white,
                             fontSize: 22),
                       ),
-                      SizedBox(
-                        width: 60,
-                        height: 25,
-                        child: ElevatedButton(
-                          onPressed: () {
-                            Navigator.push(
+
+                      Padding(
+                        padding: EdgeInsets.only(right: 5.0),
+                        child: PopupMenuButton(
+                          onSelected: (result) {
+                            if (result == 0) {
+                              Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (BuildContext context) =>
-                                        ProfileEdit()));
+                                    builder: (context) => ProfileEdit()),
+                              );
+                            } else {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => WelcomeScreen()),
+                              );
+                            }
                           },
-                          child: Text(
-                            'Edit',
-                            style: TextStyle(fontSize: 14),
+                          tooltip: 'Menu',
+                          child: Icon(
+                            Icons.more_horiz,
+                            size: 28.0,
+                            color: Colors.white,
                           ),
-                          style: ElevatedButton.styleFrom(
-                              primary: Color(0xFF166432),
-                              onPrimary: Colors.white,
-                              shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(20))),
+                          itemBuilder: (context) => [
+                            PopupMenuItem(
+                              value: 0,
+                              
+                              child: Row(
+                                children: [
+                                  Icon(
+                                    Icons.edit,
+                                    color: Colors.black54,
+                                    size: 22.0,
+                                  ),
+                                  Padding(
+                                    padding: EdgeInsets.only(
+                                      left: 8.0,
+                                    ),
+                                    child: Text(
+                                      "Edit",
+                                      style: TextStyle(
+                                        color: Colors.black54,
+                                        fontSize: 18.0,
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            PopupMenuItem(
+                              value: 1,
+                              
+                              child: Row(
+                                children: [
+                                  Icon(
+                                    Icons.logout,
+                                    color: Colors.black54,
+                                    size: 22.0,
+                                  ),
+                                  Padding(
+                                    padding: EdgeInsets.only(
+                                      left: 8.0,
+                                    ),
+                                    child: Text(
+                                      "Sign Out",
+                                      style: TextStyle(
+                                        color: Colors.black54,
+                                        fontSize: 18.0,
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
                         ),
                       ),
+                      // SizedBox(
+                      //   width: 60,
+                      //   height: 25,
+                      //   child: ElevatedButton(
+                      //     onPressed: () {
+                      //       Navigator.push(
+                      //           context,
+                      //           MaterialPageRoute(
+                      //               builder: (BuildContext context) =>
+                      //                   ProfileEdit()));
+                      //     },
+                      //     child: Text(
+                      //       'Edit',
+                      //       style: TextStyle(fontSize: 14),
+                      //     ),
+                      //     style: ElevatedButton.styleFrom(
+                      //         primary: Color(0xFF166432),
+                      //         onPrimary: Colors.white,
+                      //         shape: RoundedRectangleBorder(
+                      //             borderRadius: BorderRadius.circular(20))),
+                      //   ),
+                      // ),
                     ],
                   ),
                 ),
@@ -75,6 +155,21 @@ class _ProfilePageViewState extends State<ProfilePageView> {
                   child: PageView(
                     pageSnapping: true,
                     controller: pageController,
+                    // onPageChanged: (result) {
+                    //         if (result == 0) {
+                    //           Navigator.push(
+                    //             context,
+                    //             MaterialPageRoute(
+                    //                 builder: (context) => ProfileEdit()),
+                    //           );
+                    //         } else {
+                    //           Navigator.push(
+                    //             context,
+                    //             MaterialPageRoute(
+                    //                 builder: (context) => WelcomeScreen()),
+                    //           );
+                    //         }
+                    //       },
                     children: [
                       Container(
                         height: 500,
@@ -371,10 +466,16 @@ class _ProfilePageViewState extends State<ProfilePageView> {
                   ),
                   SizedBox(height: 10),
                   Container(
+                    
                     height: 40,
+                    
                     child: Row(
+                      
+                      
                       children: [
+                        
                         Expanded(
+                          
                           flex: 1,
                           child: Container(
                             height: 40,
@@ -394,6 +495,7 @@ class _ProfilePageViewState extends State<ProfilePageView> {
                             //   ),
                             // ),
                             child: AnimatedButton(
+                            
                               onPress: () {
                                 pageController.animateToPage(0,
                                     duration: Duration(microseconds: 250),
@@ -413,8 +515,10 @@ class _ProfilePageViewState extends State<ProfilePageView> {
                           ),
                         ),
                         Expanded(
+                          
                           flex: 1,
                           child: Container(
+                            
                             height: 40,
                             // child: OutlinedButton(
                             //   onPressed: () {
@@ -433,7 +537,9 @@ class _ProfilePageViewState extends State<ProfilePageView> {
                             //     borderRadius: BorderRadius.circular(0),
                             //   ),
                             // ),
+                            
                             child: AnimatedButton(
+                              
                               onPress: () {
                                 pageController.animateToPage(1,
                                     duration: Duration(microseconds: 250),
