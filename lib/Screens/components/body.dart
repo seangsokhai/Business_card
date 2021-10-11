@@ -1,13 +1,13 @@
 import 'dart:ui';
-
 import 'package:flutter/material.dart';
-
 import 'package:smalltest/Screens/components/background.dart';
 import 'package:smalltest/Screens/login/login_screen.dart';
 import 'package:smalltest/Screens/signup/signup.dart';
-
 import 'package:smalltest/components/rounded_bottom.dart';
 import 'package:smalltest/constants.dart';
+
+
+
 
 class Body extends StatelessWidget {
   @override

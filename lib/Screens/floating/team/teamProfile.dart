@@ -62,7 +62,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
           Positioned(
             top: 65,
             child: Container(
-              height: 500,
+              height: 550,
               width: MediaQuery.of(context).size.width - 40,
               margin: EdgeInsets.symmetric(horizontal: 20),
               decoration: BoxDecoration(
@@ -83,7 +83,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                           Container(
                             height: 90,
                             width: 120,
-                            padding: EdgeInsets.only(top: 15, left: 15),
+                            padding: EdgeInsets.only(top: 15, left: 10),
                             child: Image.asset(
                               'assets/images/Engineer.png',
                               height: size.height * 0.2,
@@ -93,7 +93,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                           SizedBox(width: size.width * 0.06),
                           Container(
                             height: 70,
-                            width: 120,
+                            width: 100,
                             padding: EdgeInsets.only(top: 15, left: 0),
                             child: Align(
                               alignment: Alignment.topLeft,
@@ -125,7 +125,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                           ),
                           Container(
                             height: 30,
-                            width: 80,
+                            width: 78,
                             child: IconButton(
                               onPressed: () {
                                 Navigator.push(

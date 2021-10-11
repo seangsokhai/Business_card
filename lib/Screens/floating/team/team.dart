@@ -4,6 +4,7 @@ import 'package:smalltest/Screens/floating/team/teamProfile.dart';
 
 import '../../../constants.dart';
 
+// import 'package:sizer/sizer.dart';
 class TeamScreen extends StatelessWidget {
   const TeamScreen({Key? key}) : super(key: key);
 
@@ -38,28 +39,36 @@ class Body extends StatelessWidget {
               child: Container(
                 width: double.infinity,
                 color: PinkColor,
-                padding: EdgeInsets.only(left: 30, right: 20),
+                padding: EdgeInsets.only(left: 20, right: 20),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text('Create your team Card',
-                        style: TextStyle(color: Colors.white, fontSize: 18)),
-                    SizedBox(
-                      height: 40,
-                      child: ElevatedButton.icon(
-                        onPressed: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (BuildContext context) => AddNew()));
-                        },
-                        icon: Icon(Icons.add_circle_sharp),
-                        label: Text('Add New'),
-                        style: ElevatedButton.styleFrom(
-                            primary: Colors.white,
-                            onPrimary: Colors.black,
-                            shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(20))),
+                    Container(
+                      width: MediaQuery.of(context).size.width * 0.6,
+                      child: Text('Create your team Card',
+                          style: TextStyle(color: Colors.white, fontSize: 18)),
+                    ),
+                    Expanded(
+                      child: SizedBox(
+                        width: MediaQuery.of(context).size.width * 0.4,
+                        height: 40,
+                        child: ElevatedButton.icon(
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (BuildContext context) =>
+                                        AddNew()));
+                          },
+                          icon: Icon(Icons.add_circle_sharp),
+                          label:
+                              Text('Add New', style: TextStyle(fontSize: 12)),
+                          style: ElevatedButton.styleFrom(
+                              primary: Colors.white,
+                              onPrimary: Colors.black,
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(20))),
+                        ),
                       ),
                     ),
                   ],
@@ -70,6 +79,7 @@ class Body extends StatelessWidget {
               flex: 6,
               child: SingleChildScrollView(
                 child: Container(
+                  padding: EdgeInsets.only(left: 20, right: 20),
                   child: Column(
                     children: [
                       Card(
@@ -79,28 +89,33 @@ class Body extends StatelessWidget {
                         color: Color(0xFFededed),
                         margin: EdgeInsets.only(top: 18, bottom: 0),
                         child: Container(
-                          width: 380,
+                          margin: EdgeInsets.only(left: 20, right: 20),
+                          width: double.infinity,
                           height: 90,
                           child: Stack(
                             children: [
                               Positioned(
                                 top: 10,
-                                left: 15,
+                                left: 10,
                                 child: Row(
                                   children: [
                                     Container(
                                       height: 70,
-                                      width: 90,
+                                      width: MediaQuery.of(context).size.width *
+                                          0.15,
+                                      
                                       child: Image.asset(
                                         'assets/images/Engineer.png',
-                                        height: size.height * 0.2,
-                                        width: size.width * 0.2,
+                                        height: size.height * 1,
+                                        width: size.width * 1,
+                                        
                                       ),
                                     ),
-                                    SizedBox(width: size.width * 0.06),
+                                    SizedBox(width: size.width * 0.07),
                                     Container(
                                       height: 70,
-                                      width: 120,
+                                      width: MediaQuery.of(context).size.width *
+                                          0.3,
                                       child: Align(
                                         alignment: Alignment.topLeft,
                                         child: Column(
@@ -110,7 +125,7 @@ class Body extends StatelessWidget {
                                             Text(
                                               'Mr.Micheal',
                                               style: TextStyle(
-                                                fontSize: 14,
+                                                fontSize: 13,
                                                 color: Colors.black,
                                                 fontWeight: FontWeight.bold,
                                               ),
@@ -137,10 +152,11 @@ class Body extends StatelessWidget {
                                         ),
                                       ),
                                     ),
-                                    SizedBox(width: size.width * 0.06),
+                                    SizedBox(width: size.width * 0.05),
                                     Container(
-                                      height: 30,
-                                      width: 80,
+                                      height: 25,
+                                      width: MediaQuery.of(context).size.width *
+                                          0.2,
                                       // borderRadius: BorderRadius.circular(10),
                                       // padding:
                                       //     EdgeInsets.only(right: 20, left: 20),
@@ -157,12 +173,12 @@ class Body extends StatelessWidget {
                                         icon: Icon(
                                           Icons.visibility,
                                           color: Colors.black,
-                                          size: 15,
+                                          size: 13,
                                         ),
                                         label: Text(
                                           'View',
                                           style: TextStyle(
-                                              fontSize: 11,
+                                              fontSize: 10,
                                               color: Colors.black),
                                         ),
                                         style: OutlinedButton.styleFrom(

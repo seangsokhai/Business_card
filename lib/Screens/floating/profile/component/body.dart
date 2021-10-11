@@ -1,11 +1,14 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_animated_button/flutter_animated_button.dart';
+// import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:smalltest/Screens/floating/profile/profiledit.dart';
 import 'package:smalltest/Screens/welcome_screen.dart';
 import 'package:smalltest/components/listyourcard.dart';
 // import 'package:smalltest/components/listyourcard.dart';
 import 'package:smalltest/constants.dart';
-import 'package:flutter_animated_button/flutter_animated_button.dart';
+// import 'package:flutter_animated_button/flutter_animated_button.dart';
 
 class ProfilePageView extends StatefulWidget {
   const ProfilePageView({Key? key}) : super(key: key);
@@ -33,7 +36,7 @@ class _ProfilePageViewState extends State<ProfilePageView> {
                   height: 150,
                   width: double.infinity,
                   color: PinkColor,
-                  padding: EdgeInsets.only(left: 30, right: 20, bottom: 120),
+                  padding: EdgeInsets.only(left: 20, right: 20, bottom: 120),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -72,7 +75,6 @@ class _ProfilePageViewState extends State<ProfilePageView> {
                           itemBuilder: (context) => [
                             PopupMenuItem(
                               value: 0,
-                              
                               child: Row(
                                 children: [
                                   Icon(
@@ -97,7 +99,6 @@ class _ProfilePageViewState extends State<ProfilePageView> {
                             ),
                             PopupMenuItem(
                               value: 1,
-                              
                               child: Row(
                                 children: [
                                   Icon(
@@ -152,27 +153,17 @@ class _ProfilePageViewState extends State<ProfilePageView> {
                 //pageview
                 Container(
                   height: 500,
+                  width: double.infinity,
+                  padding: EdgeInsets.only(left: 30, right: 20),
                   child: PageView(
                     pageSnapping: true,
                     controller: pageController,
-                    // onPageChanged: (result) {
-                    //         if (result == 0) {
-                    //           Navigator.push(
-                    //             context,
-                    //             MaterialPageRoute(
-                    //                 builder: (context) => ProfileEdit()),
-                    //           );
-                    //         } else {
-                    //           Navigator.push(
-                    //             context,
-                    //             MaterialPageRoute(
-                    //                 builder: (context) => WelcomeScreen()),
-                    //           );
-                    //         }
-                    //       },
                     children: [
                       Container(
+                        // color: Colors.blue,
                         height: 500,
+                        width: double.infinity,
+                        // padding: EdgeInsets.only(left: 20, right: 20),
                         child: Column(
                           children: [
                             Expanded(
@@ -181,16 +172,14 @@ class _ProfilePageViewState extends State<ProfilePageView> {
                                 child: Column(
                                   children: [
                                     SizedBox(height: size.height * 0.1),
-                                    Padding(
-                                      padding: const EdgeInsets.only(left: 30),
-                                      child: Align(
-                                          alignment: Alignment.topLeft,
-                                          child: Text(
-                                            'Your QR Card',
-                                            style: TextStyle(
-                                                fontWeight: FontWeight.bold,
-                                                fontSize: 15),
-                                          )),
+                                    Align(
+                                      alignment: Alignment.topLeft,
+                                      child: Text(
+                                        'Your QR Card',
+                                        style: TextStyle(
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: 15),
+                                      ),
                                     ),
                                   ],
                                 ),
@@ -199,7 +188,8 @@ class _ProfilePageViewState extends State<ProfilePageView> {
                             Expanded(
                               flex: 4,
                               child: Container(
-                                // color: Colors.blue,
+                                // color: Colors.yellow,
+
                                 child: SingleChildScrollView(
                                   child: Column(
                                     children: [
@@ -231,16 +221,14 @@ class _ProfilePageViewState extends State<ProfilePageView> {
                                 child: Column(
                                   children: [
                                     SizedBox(height: size.height * 0.025),
-                                    Padding(
-                                      padding: const EdgeInsets.only(left: 30),
-                                      child: Align(
-                                          alignment: Alignment.topLeft,
-                                          child: Text(
-                                            'Team Card',
-                                            style: TextStyle(
-                                                fontWeight: FontWeight.bold,
-                                                fontSize: 15),
-                                          )),
+                                    Align(
+                                      alignment: Alignment.topLeft,
+                                      child: Text(
+                                        'Team Card',
+                                        style: TextStyle(
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: 15),
+                                      ),
                                     ),
                                   ],
                                 ),
@@ -249,7 +237,8 @@ class _ProfilePageViewState extends State<ProfilePageView> {
                             Expanded(
                               flex: 10,
                               child: Container(
-                                // color: Colors.black,
+                                width: double.infinity,
+                                // color: Colors.pink,
                                 child: SingleChildScrollView(
                                   child: Column(
                                     children: [
@@ -279,7 +268,9 @@ class _ProfilePageViewState extends State<ProfilePageView> {
                       ),
                       //qr card pagesview
                       Container(
+                        width: double.infinity,
                         height: 500,
+                        // padding: EdgeInsets.only(left: 20, right: 20),
                         child: Column(
                           children: [
                             Expanded(
@@ -288,16 +279,14 @@ class _ProfilePageViewState extends State<ProfilePageView> {
                                 child: Column(
                                   children: [
                                     SizedBox(height: size.height * 0.1),
-                                    Padding(
-                                      padding: const EdgeInsets.only(left: 30),
-                                      child: Align(
-                                          alignment: Alignment.topLeft,
-                                          child: Text(
-                                            'Your QR Card',
-                                            style: TextStyle(
-                                                fontWeight: FontWeight.bold,
-                                                fontSize: 15),
-                                          )),
+                                    Align(
+                                      alignment: Alignment.topLeft,
+                                      child: Text(
+                                        'Your QR Card',
+                                        style: TextStyle(
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: 15),
+                                      ),
                                     ),
                                   ],
                                 ),
@@ -338,16 +327,14 @@ class _ProfilePageViewState extends State<ProfilePageView> {
                                 child: Column(
                                   children: [
                                     SizedBox(height: size.height * 0.025),
-                                    Padding(
-                                      padding: const EdgeInsets.only(left: 30),
-                                      child: Align(
-                                          alignment: Alignment.topLeft,
-                                          child: Text(
-                                            'Team Card',
-                                            style: TextStyle(
-                                                fontWeight: FontWeight.bold,
-                                                fontSize: 15),
-                                          )),
+                                    Align(
+                                      alignment: Alignment.topLeft,
+                                      child: Text(
+                                        'Team Card',
+                                        style: TextStyle(
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: 15),
+                                      ),
                                     ),
                                   ],
                                 ),
@@ -393,109 +380,104 @@ class _ProfilePageViewState extends State<ProfilePageView> {
 
           //Top profile
           Positioned(
-            top: 45,
-            child: Container(
-              height: 150,
-              width: MediaQuery.of(context).size.width - 40,
-              margin: EdgeInsets.symmetric(horizontal: 20),
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(15),
-                  color: Colors.white,
-                  boxShadow: [
-                    BoxShadow(
-                        color: Colors.black.withOpacity(0.3),
-                        blurRadius: 15,
-                        spreadRadius: 5)
-                  ]),
-              child: Column(
-                children: [
-                  Container(
-                    width: 400,
-                    height: 100,
-                    child: Padding(
-                      padding: const EdgeInsets.only(left: 15, top: 10),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          Container(
-                            height: 90,
-                            width: 90,
-                            padding: EdgeInsets.only(top: 0, left: 5),
-                            child: Image.asset(
-                              'assets/images/Engineer.png',
-                              height: size.height * 0.2,
-                              width: size.width * 0.2,
-                            ),
-                          ),
-                          SizedBox(width: size.width * 0.06),
-                          Container(
-                            height: 70,
-                            width: 100,
-                            padding: EdgeInsets.only(top: 0, left: 0),
-                            child: Align(
-                              alignment: Alignment.topLeft,
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: <Widget>[
-                                  Text(
-                                    'Mr.Saiihok',
-                                    style: TextStyle(
-                                      fontSize: 14,
-                                      color: Colors.black,
-                                      fontWeight: FontWeight.bold,
-                                    ),
-                                  ),
-                                  SizedBox(
-                                    height: size.height * 0.01,
-                                  ),
-                                  // Divider(color: Colors.black),
-                                  Text(
-                                    'User ID 1109062',
-                                    style: TextStyle(
-                                      fontSize: 11,
-                                      color: Colors.grey,
-                                    ),
-                                  ),
-                                ],
+              top: 45,
+              child: Container(
+                height: 150,
+                width: MediaQuery.of(context).size.width - 40,
+                margin: EdgeInsets.symmetric(horizontal: 20),
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(15),
+                    color: Colors.white,
+                    boxShadow: [
+                      BoxShadow(
+                          color: Colors.black.withOpacity(0.3),
+                          blurRadius: 15,
+                          spreadRadius: 5)
+                    ]),
+                child: Column(
+                  children: [
+                    Container(
+                      width: 400,
+                      height: 100,
+                      child: Padding(
+                        padding: const EdgeInsets.only(left: 15, top: 10),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            Container(
+                              height: 90,
+                              width: 90,
+                              padding: EdgeInsets.only(top: 0, left: 5),
+                              child: Image.asset(
+                                'assets/images/Engineer.png',
+                                height: size.height * 0.2,
+                                width: size.width * 0.2,
                               ),
                             ),
-                          ),
-                        ],
+                            SizedBox(width: size.width * 0.06),
+                            Container(
+                              height: 70,
+                              width: 100,
+                              padding: EdgeInsets.only(top: 0, left: 0),
+                              child: Align(
+                                alignment: Alignment.topLeft,
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: <Widget>[
+                                    Text(
+                                      'Mr.Saiihok',
+                                      style: TextStyle(
+                                        fontSize: 14,
+                                        color: Colors.black,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    ),
+                                    SizedBox(
+                                      height: size.height * 0.01,
+                                    ),
+                                    // Divider(color: Colors.black),
+                                    Text(
+                                      'User ID 1109062',
+                                      style: TextStyle(
+                                        fontSize: 11,
+                                        color: Colors.grey,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
-                  ),
-                  SizedBox(height: 10),
-                  Container(
+                    SizedBox(height: 10),
+                    //         Container(
+                    //           height: 40,
+                    //           child: Row(
+                    //             children: [
+                    //               Expanded(
+                    //                 flex: 1,
+                    //                 child: Container(
+                    //                   height: 40,
+                    //                   width: 200,
+                    //                   child: GNav(
+                    //                     rippleColor: Colors.grey[300]!,
+                    //                     hoverColor: Colors.grey[100]!,
+                    //                     gap: 8,
+                    //                     activeColor: PinkLColor,
+                    //                     iconSize: 30,
+                    //                     padding: EdgeInsets.symmetric(horizontal: 100, vertical: 20),
+                    //                     duration: Duration(milliseconds: 400),
+
                     
-                    height: 40,
-                    
-                    child: Row(
-                      
-                      
+                    Row(
                       children: [
-                        
                         Expanded(
-                          
                           flex: 1,
                           child: Container(
                             height: 40,
-                            // child: ElevatedButton(
-                            //   onPressed: () {
-                            //     pageController.animateToPage(0,
-                            //         duration: Duration(milliseconds: 250),
-                            //         curve: Curves.bounceInOut);
-                            //   },
-                            //   child: Text('Card'),
-                            //   style: ElevatedButton.styleFrom(
-                            //     primary: PinkColor,
-                            //     onPrimary: PinkLColor,
-                            //     shape: RoundedRectangleBorder(
-                            //       borderRadius: BorderRadius.circular(0),
-                            //     ),
-                            //   ),
-                            // ),
                             child: AnimatedButton(
-                            
                               onPress: () {
                                 pageController.animateToPage(0,
                                     duration: Duration(microseconds: 250),
@@ -515,31 +497,10 @@ class _ProfilePageViewState extends State<ProfilePageView> {
                           ),
                         ),
                         Expanded(
-                          
                           flex: 1,
                           child: Container(
-                            
                             height: 40,
-                            // child: OutlinedButton(
-                            //   onPressed: () {
-                            //     pageController.animateToPage(1,
-                            //         duration: Duration(milliseconds: 250),
-                            //         curve: Curves.bounceInOut);
-                            //   },
-                            //   child: Text(
-                            //     'OR Code',
-                            //     style: TextStyle(
-                            //         fontSize: 16, color: Colors.black),
-                            //   ),
-                            // style: OutlinedButton.styleFrom(
-                            //   side: BorderSide(color: PinkColor, width: 2),
-                            //   shape: RoundedRectangleBorder(
-                            //     borderRadius: BorderRadius.circular(0),
-                            //   ),
-                            // ),
-                            
                             child: AnimatedButton(
-                              
                               onPress: () {
                                 pageController.animateToPage(1,
                                     duration: Duration(microseconds: 250),
@@ -560,11 +521,9 @@ class _ProfilePageViewState extends State<ProfilePageView> {
                         ),
                       ],
                     ),
-                  )
-                ],
-              ),
-            ),
-          ),
+                  ],
+                ),
+              ))
         ],
       ),
     );

@@ -1,105 +1,73 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
-import 'package:smalltest/Screens/floating/category/category2.dart';
-import 'package:smalltest/Screens/welcome_screen.dart';
+import 'package:smalltest/Screens/cardsuccess.dart';
 import 'package:smalltest/constants.dart';
 
-class Body extends StatelessWidget {
+class ProgramPage extends StatelessWidget {
+  const ProgramPage({
+    Key? key,
+    required this.categories,
+    required this.index,
+    required this.size,
+  }) : super(key: key);
+
+  final List<String> categories;
+  final int index;
+  final Size size;
+
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
-    return SafeArea(
-      child: SizedBox(
-        width: double.infinity,
-        child: Column(
-          children: [
-            Expanded(
-              flex: 3,
-              child: Container(
+    return Column(
+            children: [
+              Container(
                 width: double.infinity,
-                color: PinkColor,
-                child: Center(
-                  child: Column(
-                    children: [
-                      SizedBox(
-                        height: size.height * 0.008,
-                      ),
-                      Image.asset('assets/images/logo.png',
-                          height: size.height * 0.13),
-                      SizedBox(
-                        height: size.height * 0.008,
-                      ),
-                      Container(
-                        width: double.infinity,
-                        // height: size.height * 0.04,
-                        padding: EdgeInsets.only(left: 20, right: 20),
-                        child: CupertinoSearchTextField(
-                          backgroundColor: Colors.grey.shade50,
-                        ),
-                      ),
-                    ],
-                  ),
+                padding: EdgeInsets.only(left: 20, top: 10),
+                alignment: Alignment.centerLeft,
+                child: Text(
+                  "${categories[index]}",
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: size.width * 0.035),
+                  textAlign: TextAlign.start,
                 ),
               ),
-            ),
-            Expanded(
-              flex: 9,
-              child: SingleChildScrollView(
-                child: Container(
-                  child: Column(
-                    children: [
-                      Container(
-                        width: double.infinity,
-                        padding: EdgeInsets.only(left: 20, top: 10),
-                        alignment: Alignment.centerLeft,
-                        child: Text(
-                          "All Categories",
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: size.width * 0.035),
-                          textAlign: TextAlign.start,
-                        ),
-                      ),
-                      ListCategory(
-                        text: 'Engineer',
-                        input: 'Create your card',
-                        press: () => () {
-                          Navigator.of(context).push(MaterialPageRoute(
-                              builder: (context) => CateGoryTwo()));
-                        },
-                        img: 'assets/images/Engineer.png',
-                      ),
-                      ListCategory(
-                        text: 'Programmer',
-                        input: 'Create your card',
-                        press: () => () {
-                          Navigator.of(context).push(MaterialPageRoute(
-                              builder: (context) => WelcomeScreen()));
-                        },
-                        img: 'assets/images/developers.png',
-                      ),
-                      ListCategory(
-                        text: 'Lawyer',
-                        input: 'Create your card',
-                        press: () {},
-                        img: 'assets/images/lawyer.png',
-                      ),
-                      ListCategory(
-                        text: 'Business',
-                        input: 'Create your card',
-                        press: () {},
-                        img: 'assets/images/person.png',
-                      ),
-                    ],
-                  ),
-                ),
+              ListCategory(
+                text: 'Programming 1',
+                input: 'Create your card',
+                press: () => () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) => Cardsuccess(),
+                    ),
+                  );
+                },
+                img: 'assets/images/developers.png',
               ),
-            ),
-          ],
-        ),
-      ),
-    );
+              ListCategory(
+                text: 'Programming 2',
+                input: 'Create your card',
+                press: () => () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) => Cardsuccess(),
+                    ),
+                  );
+                },
+                img: 'assets/images/developers.png',
+              ),
+              ListCategory(
+                text: 'Programming 3',
+                input: 'Create your card',
+                press: () => () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) => Cardsuccess(),
+                    ),
+                  );
+                },
+                 img: 'assets/images/developers.png',
+              ),
+            ],
+          );
   }
 }
 

@@ -16,8 +16,10 @@ class ListyourCard extends StatelessWidget {
     return Positioned(
       top: 10,
       left: 35,
+      width: double.infinity,
       child: Padding(
-        padding: const EdgeInsets.only(left: 60, top: 10, bottom: 10),
+        padding:
+            const EdgeInsets.only(left: 20, right: 20, top: 10, bottom: 10),
         child: Row(
           children: [
             Container(
@@ -29,7 +31,7 @@ class ListyourCard extends StatelessWidget {
                 width: size.width * 0.1,
               ),
             ),
-            SizedBox(width: size.width * 0.06),
+            SizedBox(width: size.width * 0.08),
             Container(
               height: 70,
               width: 120,
@@ -108,5 +110,3 @@ class ListyourCard extends StatelessWidget {
     );
   }
 }
-
-
